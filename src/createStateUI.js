@@ -17,9 +17,15 @@ class CreateStates extends Component {
     return stateNames;
   }
 
+  fillDropDown(stateName) {
+    return <option key={stateName}>{stateName}</option>
+  }
+
   render() {
     return (
-      <select>this.state.stateNames</select>
+      <select>
+        {this.state.stateNames.map(this.fillDropDown)}
+      </select>
     )
   }
 
